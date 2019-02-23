@@ -33,9 +33,14 @@ for line in in_file:
 
 in_file.close()
 
+limit = len(sites) - 1
+
+
+
 while True:
-    dest = random.choice(sites)
-    timer = random.randint(5, 10)
+    index = random.randint(0, limit)
+    dest = sites[index]
+    timer = random.randint(2, 4)
     print 'Attempting GET to: ' + dest
     try:
         req = http.request('GET', dest)
